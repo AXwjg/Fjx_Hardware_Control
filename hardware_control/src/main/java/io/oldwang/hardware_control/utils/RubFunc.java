@@ -1,4 +1,4 @@
-package io.oldwang.fjx_hardware_control.utils;
+package io.oldwang.hardware_control.utils;
 
 import android.content.Context;
 

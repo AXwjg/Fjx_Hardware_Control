@@ -1,6 +1,6 @@
-package io.oldwang.fjx_hardware_control.interfaces;
+package io.oldwang.hardware_control.interfaces;
 
-import io.oldwang.fjx_hardware_control.bean.ComBean;
+import io.oldwang.hardware_control.bean.ComBean;
 
 /**
  * @author OldWang

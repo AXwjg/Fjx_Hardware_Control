@@ -1,4 +1,4 @@
-package io.oldwang.fjx_hardware_control.constant;
+package io.oldwang.hardware_control.constant;
 
 /**
  * 串口

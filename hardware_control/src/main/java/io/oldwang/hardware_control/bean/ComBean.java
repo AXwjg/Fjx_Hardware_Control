@@ -1,4 +1,4 @@
-package io.oldwang.fjx_hardware_control.bean;
+package io.oldwang.hardware_control.bean;
 
 import java.util.Arrays;
 

@@ -1,2 +1,3 @@
+include ':hardware_control'
 include ':app'
 rootProject.name = "Fjx_Hardware_Control"

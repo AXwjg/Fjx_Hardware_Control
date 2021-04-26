@@ -1,7 +1,7 @@
-package io.oldwang.fjx_hardware_control.serial_helper;
+package io.oldwang.hardware_control.serial_helper;
+
 
 import android.serialport.SerialPort;
-import android.util.Log;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +12,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.InvalidParameterException;
 
-import io.oldwang.fjx_hardware_control.bean.ComBean;
-import io.oldwang.fjx_hardware_control.interfaces.DataReceivedCall;
-import io.oldwang.fjx_hardware_control.utils.RubFunc;
+import io.oldwang.hardware_control.bean.ComBean;
+import io.oldwang.hardware_control.interfaces.DataReceivedCall;
+import io.oldwang.hardware_control.utils.RubFunc;
 
 /**
  * @author OldWang
