@@ -6,9 +6,10 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.security.InvalidParameterException;
 
-import io.oldwang.fjx_hardware_control.constant.SerialPort;
-import io.oldwang.fjx_hardware_control.interfaces.DataReceivedCall;
-import io.oldwang.fjx_hardware_control.serial_helper.SerialHelper;
+import io.oldwang.hardware_control.constant.SerialPort;
+import io.oldwang.hardware_control.interfaces.DataReceivedCall;
+import io.oldwang.hardware_control.serial_helper.SerialHelper;
+
 
 /**
  * @author OldWang
