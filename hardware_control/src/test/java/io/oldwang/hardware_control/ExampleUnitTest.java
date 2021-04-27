@@ -14,4 +14,16 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void test() {
+        StringBuffer mIcNumber = new StringBuffer();
+        mIcNumber.append("123");
+        System.out.println("1: " + mIcNumber.toString());
+
+        mIcNumber.setLength(0);
+        mIcNumber.append("321");
+        System.out.println("2: " + mIcNumber.toString());
+
+    }
 }

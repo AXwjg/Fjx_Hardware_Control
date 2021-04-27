@@ -30,6 +30,10 @@ public class SerialPortUtil {
     private static SerialHelper DaughterBoardScaleHelper;
 
     private static SerialPortUtil ourInstance;
+    // 打开的刷卡器扫码器子板的串口地址
+    private String qrCodePort;
+    private String icPort;
+    private String daughterBoardPort;
 
     public static SerialPortUtil getInstance() {
         if (ourInstance == null) {
@@ -47,6 +51,9 @@ public class SerialPortUtil {
     }
 
     public void initPort() {
+        qrCodePort = SerialPort.QCodePort;
+        icPort = SerialPort.ICPort;
+        daughterBoardPort = SerialPort.DaughterBoardPort;
         QCodeSerialHelper.setPort(SerialPort.QCodePort);
         QCodeSerialHelper.setBaudRate(SerialPort.QCodeBaudRate);
 //        QCodeSerialHelper.setDataReceivedCall(dataReceivedCall);
@@ -66,6 +73,44 @@ public class SerialPortUtil {
         DaughterBoardScaleHelper.setBaudRate(SerialPort.DaughterBoardBaudRate);
 //        DaughterBoardScaleHelper.setDataReceivedCall(dataReceivedCall);
         openComPort(DaughterBoardScaleHelper);
+    }
+
+    public void initPort(String qrCodePort, String qrCodeBaudRate, String icPort, String icBaudRate,
+                         String daughterBoardPort, String daughterBoardBaudRate) {
+        this.qrCodePort = qrCodePort;
+        this.icPort = icPort;
+        this.daughterBoardPort = daughterBoardPort;
+        QCodeSerialHelper.setPort(qrCodePort);
+        QCodeSerialHelper.setBaudRate(qrCodeBaudRate);
+//        QCodeSerialHelper.setDataReceivedCall(dataReceivedCall);
+        openComPort(QCodeSerialHelper);
+
+        ICSerialHelper.setPort(icPort);
+        ICSerialHelper.setBaudRate(icBaudRate);
+//        ICSerialHelper.setDataReceivedCall(dataReceivedCall);
+        openComPort(ICSerialHelper);
+
+        PrintSerialHelper.setPort(SerialPort.PrintPort);
+        PrintSerialHelper.setBaudRate(SerialPort.PrintBaudRate);
+//        PrintSerialHelper.setDataReceivedCall(dataReceivedCall);
+        openComPort(PrintSerialHelper);
+
+        DaughterBoardScaleHelper.setPort(daughterBoardPort);
+        DaughterBoardScaleHelper.setBaudRate(daughterBoardBaudRate);
+//        DaughterBoardScaleHelper.setDataReceivedCall(dataReceivedCall);
+        openComPort(DaughterBoardScaleHelper);
+    }
+
+    public String getQrCodePort() {
+        return qrCodePort;
+    }
+
+    public String getIcPort() {
+        return icPort;
+    }
+
+    public String getDaughterBoardPort() {
+        return daughterBoardPort;
     }
 
     /**
@@ -158,12 +203,11 @@ public class SerialPortUtil {
                 RequestSheetUtil.requestOpenQ3(position, time));
     }
 
-    // 请求子板重量以及门状态信息 0x06
+    // 单独请求子板重量 0x06
     public void singleBoxWeight(int position) {
         DaughterBoardScaleHelper.send(
                 RequestSheetUtil.requestSingleWeight(position));
     }
-
 
     // 请求打开臭氧发生器，time是打开时长，单位为分钟 0x07
     public void systemMessage(int position) {

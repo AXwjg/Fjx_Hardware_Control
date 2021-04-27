@@ -115,9 +115,9 @@ public class SerialHelper {
                     byte[] buffer = new byte[512];
                     int size = mInputStream.read(buffer);
                     if (size > 0) {
-                        ComBean ComRecData = new ComBean(sPort, buffer, size);
+                        ComBean comRecData = new ComBean(sPort, buffer, size);
                         if (null != mDataReceived) {
-                            mDataReceived.onDataReceived(ComRecData);
+                            mDataReceived.onDataReceived(comRecData);
                         } else {
                             throw new NullPointerException("SerialHelper must set DataReceivedCall!");
                         }
