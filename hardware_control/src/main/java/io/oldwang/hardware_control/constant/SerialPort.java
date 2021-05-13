@@ -9,7 +9,7 @@ package io.oldwang.hardware_control.constant;
 public class SerialPort {
     // 子板
     public final static String DaughterBoardPort = "/dev/ttyS3";
-    public final static String DaughterBoardBaudRate = "19200";
+    public final static String DaughterBoardBaudRate = "9600";
     // 扫码器
     public final static String QCodePort = "/dev/ttyS2";
     public final static String QCodeBaudRate = "9600";
