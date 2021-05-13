@@ -51,28 +51,8 @@ public class SerialPortUtil {
     }
 
     public void initPort() {
-        qrCodePort = SerialPort.QCodePort;
-        icPort = SerialPort.ICPort;
-        daughterBoardPort = SerialPort.DaughterBoardPort;
-        QCodeSerialHelper.setPort(SerialPort.QCodePort);
-        QCodeSerialHelper.setBaudRate(SerialPort.QCodeBaudRate);
-//        QCodeSerialHelper.setDataReceivedCall(dataReceivedCall);
-        openComPort(QCodeSerialHelper);
-
-        ICSerialHelper.setPort(SerialPort.ICPort);
-        ICSerialHelper.setBaudRate(SerialPort.ICBaudRate);
-//        ICSerialHelper.setDataReceivedCall(dataReceivedCall);
-        openComPort(ICSerialHelper);
-
-        PrintSerialHelper.setPort(SerialPort.PrintPort);
-        PrintSerialHelper.setBaudRate(SerialPort.PrintBaudRate);
-//        PrintSerialHelper.setDataReceivedCall(dataReceivedCall);
-        openComPort(PrintSerialHelper);
-
-        DaughterBoardScaleHelper.setPort(SerialPort.DaughterBoardPort);
-        DaughterBoardScaleHelper.setBaudRate(SerialPort.DaughterBoardBaudRate);
-//        DaughterBoardScaleHelper.setDataReceivedCall(dataReceivedCall);
-        openComPort(DaughterBoardScaleHelper);
+        initPort(SerialPort.QCodePort, SerialPort.QCodeBaudRate, SerialPort.ICPort, SerialPort.ICBaudRate,
+                SerialPort.DaughterBoardPort, SerialPort.DaughterBoardBaudRate);
     }
 
     public void initPort(String qrCodePort, String qrCodeBaudRate, String icPort, String icBaudRate,
@@ -82,22 +62,18 @@ public class SerialPortUtil {
         this.daughterBoardPort = daughterBoardPort;
         QCodeSerialHelper.setPort(qrCodePort);
         QCodeSerialHelper.setBaudRate(qrCodeBaudRate);
-//        QCodeSerialHelper.setDataReceivedCall(dataReceivedCall);
         openComPort(QCodeSerialHelper);
 
         ICSerialHelper.setPort(icPort);
         ICSerialHelper.setBaudRate(icBaudRate);
-//        ICSerialHelper.setDataReceivedCall(dataReceivedCall);
         openComPort(ICSerialHelper);
 
         PrintSerialHelper.setPort(SerialPort.PrintPort);
         PrintSerialHelper.setBaudRate(SerialPort.PrintBaudRate);
-//        PrintSerialHelper.setDataReceivedCall(dataReceivedCall);
         openComPort(PrintSerialHelper);
 
         DaughterBoardScaleHelper.setPort(daughterBoardPort);
         DaughterBoardScaleHelper.setBaudRate(daughterBoardBaudRate);
-//        DaughterBoardScaleHelper.setDataReceivedCall(dataReceivedCall);
         openComPort(DaughterBoardScaleHelper);
     }
 
